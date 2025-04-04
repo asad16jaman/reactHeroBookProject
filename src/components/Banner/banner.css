@@ -1,0 +1,11 @@
+.bannerBody{
+    display: flex;
+  
+    gap: 66px;
+    align-items: center;
+    justify-content: center;
+}
+.bannerleft{
+  
+    font-size: 54px;
+}

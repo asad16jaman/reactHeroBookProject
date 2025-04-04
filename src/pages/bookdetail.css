@@ -1,0 +1,7 @@
+table tr td{
+    padding: 10px 79px 0px 0px;
+}
+
+table tr td:last-child{
+    font-weight: 700;
+}
