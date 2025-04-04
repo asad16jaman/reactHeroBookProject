@@ -4,6 +4,7 @@ import PageNav from '../components/PageNav';
 import Footer from '../components/Footer';
 import "./bookdetail.css"
 import { BookDataProvider } from '../BookProvider';
+import { ToastContainer,toast } from 'react-toastify';
 
 
 
@@ -12,6 +13,7 @@ export default function BookDetail() {
     const {dispatch} = useContext(BookDataProvider)
 
     const handleReadBook = (id)=>{
+        toast.success('Successfully add to readList')
         dispatch({
             type:"ADD_READBOOK",
             data:id
@@ -19,6 +21,7 @@ export default function BookDetail() {
     }
 
     const handleWishBook = (id)=>{
+        toast.success('Successfully add to WishList')
         dispatch({
             type:"ADD_WISHBOOK",
             data:id
@@ -28,7 +31,7 @@ export default function BookDetail() {
   return (
     <>
         <PageNav />
-
+            <ToastContainer />
             <div className="container">
                 <div className="row my-5 ">
                     <div className="col-12 col-md-6 bg-light d-flex justify-content-center rounded align-items-center p-3">
@@ -52,6 +55,7 @@ export default function BookDetail() {
                             <hr />
                             <div>
                                 <table>
+                                    <tbody>
                                     <tr>
                                         <td>Number Of Page</td>
                                         <td>{book.totalPages}</td>
@@ -68,6 +72,7 @@ export default function BookDetail() {
                                         <td>Rating</td>
                                         <td>{book.rating}</td>
                                     </tr>
+                                    </tbody>
                                 </table>
                             </div>
                             <div className='mt-4'>
@@ -78,7 +83,7 @@ export default function BookDetail() {
                     </div>
                 </div>
             </div>
-
+          
         <Footer />
     </>
   )

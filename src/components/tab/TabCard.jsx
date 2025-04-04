@@ -1,10 +1,19 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
 import { TfiLocationPin } from "react-icons/tfi";
 import { GoPeople } from "react-icons/go";
 import { MdOutlineContactPage } from "react-icons/md";
 
+
 export default function TabCard({data}) {
+
+   const navigate = useNavigate();
+
+  const handleNavigation = (id)=>{
+
+    navigate(`/${id}`)
+  }
+
   return (
     <div className="card mb-3">
               <div className="card-body">
@@ -35,7 +44,7 @@ export default function TabCard({data}) {
                     <hr />
                     <button style={{background:"#dde7ea"}} className='btn  border-none rounded-pill me-3 px-5 py-1 text-primary'>Catagory: {data.category}</button>
                     <button style={{background:"#FFAC3326",color:"yellow"}} className='btn  border-none rounded-pill me-3 px-5 py-1'>Rating: {data.rating}</button>
-                    <button style={{background:"#dde7ea"}} className='btn bg-primary text-white border-none rounded-pill px-5 py-1'>View Detail</button>
+                    <button style={{background:"#dde7ea"}} onClick={handleNavigation.bind(this,data.bookId)} className='btn bg-primary text-white border-none rounded-pill px-5 py-1'>View Detail</button>
 
                   </div>
               </div>

@@ -4,7 +4,6 @@ import Footer from '../components/Footer'
 import SortForm from '../components/SortForm'
 import Tab from '../components/tab/TabBar'
 import ReadBookContainer from '../components/tab/ReadBookContainer'
-import WishBookContainer from '../components/tab/WishBookContainer'
 import { BookDataProvider } from '../BookProvider'
 
 
